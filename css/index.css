@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 677px;
+  bottom: 0;
 }
 .fix-bg img {
   display: block;
@@ -106,8 +106,7 @@
 .nav .wrap .nav-con a.cur span:after,
 .nav .wrap .nav-con a:hover span:after {
   transform: scale(1, 1);
-  border-bottom: 2px solid #ee1d3c\0;
-  border-bottom: 2px solid #ee1d3c\9\0;
+  border-bottom: 2px solid #ee1d3c\9;
 }
 /*导航 end*/
 /*轮播图 start*/
@@ -273,6 +272,26 @@
   top: 235px;
   font-weight: lighter;
   cursor: pointer;
+  transition: all .5s ease;
+}
+.box-1 .wrap .explain .more i {
+  position: absolute;
+  height: 16px;
+  width: 9px;
+  background: url(../images/images/arrow-more.png) no-repeat;
+  top: 12px;
+  left: 50%;
+  z-index: -1;
+  transition: all .5s ease;
+}
+.box-1 .wrap .explain .more:hover {
+  background: #434242;
+  text-indent: -30px;
+  color: #fff;
+}
+.box-1 .wrap .explain .more:hover i {
+  left: 75%;
+  z-index: 1;
 }
 .box-1 .wrap > img {
   position: absolute;

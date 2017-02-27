@@ -7,6 +7,7 @@ $(document).ready(function(){
 	var $box2divs = $(".box-2>.wrap>div");
 	var initTop = $(document).scrollTop();
 	var flag = (initTop>146 && initTop<600)?1:0;
+	$maskBg.height($(window).height()-$nav.height());
 	$(window).on("scroll",function(){	
 		var top = $(document).scrollTop();
 		

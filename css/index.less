@@ -11,6 +11,8 @@
     bottom: 0;
     img{
         display: block;
+        height: 100%;
+        margin: 0 auto;
     }
 }
 /*顶部背景 end*/
@@ -28,14 +30,11 @@
     top: 0;
     z-index: 100;
     box-shadow: 1px 1px 58px -16px rgba(0,0,0,.3);
+    transition: all .5s ease;
 }
 .nav{
     background-color: #fff;
     opacity: 1;
-    -webkit-animation-duration: .3s;
-    animation-duration: .3s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
     .wrap{
         &:after{
             .clear();
@@ -104,6 +103,26 @@
     .wrap-con{
         padding:62px 33px 46px;
         background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
+        .video-wrap{
+            height: 637px;
+            cursor: pointer;
+            position: relative;
+            .parse{
+                position: absolute;
+                width: 65px;
+                height: 65px;
+                background: url(../images/images/parse.png) no-repeat center;
+                top: 50%;
+                left: 50%;
+                margin-top: -32px;
+                margin-left: -32px;   
+            }
+            .video-con{
+                display: none;
+                position:relative; 
+                height: 637px;     
+            }
+        }
         p{
             color: #333;
             font-size: 32px;
@@ -113,12 +132,78 @@
                 color: #ee1d3c;
             }
         }
-        .video-con{
-            height: 637px;
-        }
+        
     }
 }
 /*轮播图 end*/
+.video-con1,.video-con{
+    background: #fff;
+    .hd{
+        text-align: center;
+        ul{
+            position:absolute;
+            z-index: 10;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            display: inline-block;
+            li{
+                display: inline-block;
+                width: 30px;
+                height: 3px;
+                margin: 0 10px;
+                background:#eee \9;
+                background: rgba(255,255,255,.5);
+                cursor: pointer;
+            }
+            li.on{
+                background:#fff;
+            }
+        }
+        span{
+            width: 21px;
+            height: 35px;
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            z-index: 10;
+            cursor: pointer;
+        }
+        .prev{
+           background: url(../images/images/arrow-l.png) no-repeat;
+           left: -30px;
+        }
+        .next{
+            background: url(../images/images/arrow-r.png) no-repeat;
+            right: -30px;
+        }
+    }
+    .bd{
+        height:100%;
+        ul{
+            height: 100%;
+            li{
+                height:637px;
+                width: 1134px;
+            }
+        }
+    }
+}
+.close{
+    font-size: 50px;
+    font-weight: lighter;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 10;
+    opacity: .7;
+    cursor: pointer;
+}
 /*02,03盒子线条 start*/
 .line-bg{
     top: 0;
@@ -183,20 +268,13 @@
             &>span{
                 background-color: #d23a34;
             }
-            p{
-                .txt_rotate();
-                font-size: 22px;
+            .spell-1{
                 position: absolute;
-            }
-            p.p1{
-                color: #f59425;
-                left: -78px;
-                top: 270px;
-            }
-            p.p2{
-                color: #272727;
-                left: -70px;
-                top: 290px;
+                width: 47px;
+                height: 207px;
+                background: url(../images/images/spell-1.png) no-repeat center;
+                left: 0;
+                top: 200px;
             }
         }
         .explain{
@@ -269,6 +347,23 @@
             bottom: 60px;
             z-index: 2;
         }
+        &>.video-con1{
+            display: none;
+            height: 637px;
+            width: 1134px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            .prev{
+               background: url(../images/images/arrow-l1.png) no-repeat;
+               left: -30px;
+            }
+            .next{
+                background: url(../images/images/arrow-r1.png) no-repeat;
+                right: -30px;
+            }
+        }
     }
 }
 /*02 end*/
@@ -302,15 +397,7 @@
             };
             &>span{
                 background-color:#f59425 ;
-                margin-bottom: 88px;
-            }
-            p.p1{
-                color: #272727;
-                padding-bottom: 12px;
-            };
-            p.p2{
-                color: #7ee3e7;
-                padding-bottom:24px ;
+                margin-bottom: 166px;
             }
             .img-carouse{
                 width: 642px;
@@ -320,25 +407,52 @@
                 box-shadow: 0 14px 50px 0px rgba(0, 0, 0, 0.3);
             }
         }
-        p.rotate{
-            font-size: 22px;
-            position:absolute;
-            .txt_rotate();
-            color: #282828;
-            span{
-                color: #7ee3e7;
-                margin-left: 5px;
+        .slide03{
+            position: relative;
+            z-index: 10;
+            .hd{
+                li.on{
+                    opacity: 1;
+                }
             }
-        }
-        p.r-1{
-            left: 76px;
-            top: 452px;
-            
-        }
-        p.r-2{
-            right: 96px;
-            bottom: 120px;
-        }
+            .bd{
+                width: 642px;
+                height: 384px;
+                margin: 20px auto 80px;
+                border: 1px solid #a8a8a8;
+                box-shadow: 0 14px 50px 0px rgba(0, 0, 0, 0.3);
+            }
+            .rotate-0{
+                position: absolute;
+                width: 224px;
+                height: 45px;
+                background: url(../images/images/spell4.png);
+                left: 380px;
+                top: -80px;
+                cursor: pointer;
+                opacity: .5;
+            }
+            .rotate-1{
+                width: 19px;
+                height: 336px;
+                position: absolute;
+                background: url(../images/images/spell-2.png) no-repeat center;
+                left: 205px;
+                top: 0px;
+                cursor: pointer;
+                opacity: .7;
+            }
+            .rotate-2{
+                width: 19px;
+                height: 268px;
+                position: absolute;
+                background: url(../images/images/spell-3.png) no-repeat center;
+                right: 205px;
+                bottom: 0px;
+                cursor: pointer;
+                opacity: .7;
+            }
+        }       
         &>img{
             position: absolute;
             right: 0;
@@ -387,9 +501,12 @@
     }
 }
 /*footer end*/
-.num,.title,.explain{
+.num,.title,.explain,.slide03{
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+.vjs-remaining-time-display{
+    line-height: 3em;
 }

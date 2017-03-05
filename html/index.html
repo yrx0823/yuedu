@@ -5,15 +5,16 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/animate.css" />
 		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../css/video-js.min.css" />
 		<title>越度-首页</title>
 		<script src="../js/jquery-1.11.3.min.js"></script>
+		<script src="../js/jquery.SuperSlide.2.1.1.js"></script>
+		<script src="../js/video.min.js"></script>
 		<script src='../js/index.js'></script>
 	</head>
 	<body>
 		<div class="fix-bg">
-			<div class="wrap">
-				<img src="../images/images/fix-bg.jpg" alt="" />
-			</div>
+			<img src="../images/images/fix-bg.jpg" alt="" />
 		</div>
 		<div class="mask-bg"></div>
 		<div class="nav" id="navId">
@@ -34,9 +35,56 @@
 			<div class="wrap">
 				<div class="wrap-con">
 					<p>整合营销传播（<span>IMC</span>）</p>
-					<div class="video-con">
-						<video src=""></video>
+					<div class="video-wrap">
+						<span class="parse"></span>
+						<div class="video-con">
+							<div class="hd">
+						        <ul></ul>
+						        <span class='prev'></span>
+						        <span class='next'></span>
+						    </div>
+						    <div class="bd">
+						        <ul>
+						            <li>
+						            	<video 
+						            		id="video_1" 
+						            		class="video-js vjs-big-play-centered"
+						            		style="width: 100%;height:100%;" 
+						            		controls 
+						            		preload="auto" 
+						            		data-setup='{}'>
+						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+						            	</video>
+						            </li>
+							        <li style="background:#abcdef;">
+							        	<video 
+						            		id="video_2" 
+						            		class="video-js vjs-big-play-centered"
+						            		style="width: 100%;height:100%;" 
+						            		controls 
+						            		preload="auto" 
+						            		data-setup='{}'>
+						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+						            	</video>
+							        </li>
+						            <li style="background:greenyellow;">
+						            	<video 
+						            		id="video_3" 
+						            		class="video-js vjs-big-play-centered"
+						            		style="width: 100%;height:100%;" 
+						            		controls 
+						            		preload="auto" 
+						            		data-setup='{}'>
+						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+						            	</video>
+						            </li>
+					            
+						        </ul>
+						    </div>
+						    <div class="close">×</div>
+						</div>
 					</div>
+					
 				</div>
 				
 			</div>
@@ -56,8 +104,7 @@
 				<div class="title">
 					<h2>企业CSR </h2>
 					<span></span>
-					<p class="p1">RESPONSIBILITY</p>
-					<p class="p2">CORPORATE&nbsp;SOCIAL</p>
+					<div class="spell-1"></div>
 				</div>
 				<div class="explain">
 					<ul>
@@ -89,6 +136,22 @@
 					<div class="more">MORE <i></i> </div>
 				</div>
 				<img src="../images/images/pic.png" alt="" />
+				<div class="video-con1">
+					<div class="hd">
+				        <ul></ul>
+				        <span class='prev'></span>
+				        <span class='next'></span>
+				    </div>
+				    <div class="bd">
+				        <ul>
+				            <li style="background:hotpink;"></li>
+					        <li style="background:#abcdef;"></li>
+				            <li style="background:greenyellow;"></li>
+			            
+				        </ul>
+				    </div>
+				    <div class="close">×</div>
+				</div>
 			</div>
 		</div>
 		<div class="box-2">
@@ -106,19 +169,22 @@
 				<div class="title">
 					<h2>网红经济 </h2>
 					<span></span>
-					<p class="p1">RESPONSIBILITY</p>
-					<p class="p2">CORPORATE&nbsp;SOCIAL</p>
-					<div class="img-carouse">
-						<img src="../images/images/pic-2.jpg" alt="" />
+				</div>
+				<div class="slide03">
+					<div class="hd">
+						<ul>
+							<li class="rotate-0"></li>
+							<li class="rotate-1"></li>
+							<li class="rotate-2"></li>
+						</ul>
 					</div>
-					<p class="rotate r-1">
-						资源优势
-						<span>resource&nbsp;superiority</span>
-					</p>
-					<p class="rotate r-2">
-						内容服务
-						<span>service&nbsp;content</span>
-					</p>
+					<div class="bd">
+						<ul>
+							<li><img src="../images/images/pic-2.jpg" alt="" /></li>
+							<li><img src="../images/images/pic-3.jpg" alt="" /></li>
+							<li><img src="../images/images/pic-4.jpg" alt="" /></li>
+						</ul>
+					</div>
 				</div>
 				<img src="../images/images/triangle.png" alt="" />
 			</div>

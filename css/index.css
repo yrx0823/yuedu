@@ -10,6 +10,8 @@
 }
 .fix-bg img {
   display: block;
+  height: 100%;
+  margin: 0 auto;
 }
 /*顶部背景 end*/
 .mask-bg {
@@ -26,14 +28,11 @@
   top: 0;
   z-index: 100;
   box-shadow: 1px 1px 58px -16px rgba(0, 0, 0, 0.3);
+  transition: all .5s ease;
 }
 .nav {
   background-color: #fff;
   opacity: 1;
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 .nav .wrap {
   height: 90px;
@@ -117,6 +116,26 @@
   padding: 62px 33px 46px;
   background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
 }
+.carousel .wrap-con .video-wrap {
+  height: 637px;
+  cursor: pointer;
+  position: relative;
+}
+.carousel .wrap-con .video-wrap .parse {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: url(../images/images/parse.png) no-repeat center;
+  top: 50%;
+  left: 50%;
+  margin-top: -32px;
+  margin-left: -32px;
+}
+.carousel .wrap-con .video-wrap .video-con {
+  display: none;
+  position: relative;
+  height: 637px;
+}
 .carousel .wrap-con p {
   color: #333;
   font-size: 32px;
@@ -126,10 +145,86 @@
 .carousel .wrap-con p span {
   color: #ee1d3c;
 }
-.carousel .wrap-con .video-con {
-  height: 637px;
-}
 /*轮播图 end*/
+.video-con1,
+.video-con {
+  background: #fff;
+}
+.video-con1 .hd,
+.video-con .hd {
+  text-align: center;
+}
+.video-con1 .hd ul,
+.video-con .hd ul {
+  position: absolute;
+  z-index: 10;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  display: inline-block;
+}
+.video-con1 .hd ul li,
+.video-con .hd ul li {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  margin: 0 10px;
+  background: #eee \9;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.video-con1 .hd ul li.on,
+.video-con .hd ul li.on {
+  background: #fff;
+}
+.video-con1 .hd span,
+.video-con .hd span {
+  width: 21px;
+  height: 35px;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  z-index: 10;
+  cursor: pointer;
+}
+.video-con1 .hd .prev,
+.video-con .hd .prev {
+  background: url(../images/images/arrow-l.png) no-repeat;
+  left: -30px;
+}
+.video-con1 .hd .next,
+.video-con .hd .next {
+  background: url(../images/images/arrow-r.png) no-repeat;
+  right: -30px;
+}
+.video-con1 .bd,
+.video-con .bd {
+  height: 100%;
+}
+.video-con1 .bd ul,
+.video-con .bd ul {
+  height: 100%;
+}
+.video-con1 .bd ul li,
+.video-con .bd ul li {
+  height: 637px;
+  width: 1134px;
+}
+.close {
+  font-size: 50px;
+  font-weight: lighter;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 10;
+  opacity: .7;
+  cursor: pointer;
+}
 /*02,03盒子线条 start*/
 .line-bg {
   top: 0;
@@ -202,29 +297,13 @@
 .box-1 .wrap .title > span {
   background-color: #d23a34;
 }
-.box-1 .wrap .title p {
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  /* Internet Explorer 9*/
-  -moz-transform: rotate(90deg);
-  /* Firefox */
-  -webkit-transform: rotate(90deg);
-  /* Safari 和 Chrome */
-  -o-transform: rotate(90deg);
-  /* Opera */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  font-size: 22px;
+.box-1 .wrap .title .spell-1 {
   position: absolute;
-}
-.box-1 .wrap .title p.p1 {
-  color: #f59425;
-  left: -78px;
-  top: 270px;
-}
-.box-1 .wrap .title p.p2 {
-  color: #272727;
-  left: -70px;
-  top: 290px;
+  width: 47px;
+  height: 207px;
+  background: url(../images/images/spell-1.png) no-repeat center;
+  left: 0;
+  top: 200px;
 }
 .box-1 .wrap .explain {
   left: 615px;
@@ -299,6 +378,23 @@
   bottom: 60px;
   z-index: 2;
 }
+.box-1 .wrap > .video-con1 {
+  display: none;
+  height: 637px;
+  width: 1134px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.box-1 .wrap > .video-con1 .prev {
+  background: url(../images/images/arrow-l1.png) no-repeat;
+  left: -30px;
+}
+.box-1 .wrap > .video-con1 .next {
+  background: url(../images/images/arrow-r1.png) no-repeat;
+  right: -30px;
+}
 /*02 end*/
 /*03 start*/
 .box-2 {
@@ -334,15 +430,7 @@
 }
 .box-2 .wrap .title > span {
   background-color: #f59425 ;
-  margin-bottom: 88px;
-}
-.box-2 .wrap .title p.p1 {
-  color: #272727;
-  padding-bottom: 12px;
-}
-.box-2 .wrap .title p.p2 {
-  color: #7ee3e7;
-  padding-bottom: 24px ;
+  margin-bottom: 166px;
 }
 .box-2 .wrap .title .img-carouse {
   width: 642px;
@@ -351,32 +439,49 @@
   border: 1px solid #a8a8a8;
   box-shadow: 0 14px 50px 0px rgba(0, 0, 0, 0.3);
 }
-.box-2 .wrap p.rotate {
-  font-size: 22px;
+.box-2 .wrap .slide03 {
+  position: relative;
+  z-index: 10;
+}
+.box-2 .wrap .slide03 .hd li.on {
+  opacity: 1;
+}
+.box-2 .wrap .slide03 .bd {
+  width: 642px;
+  height: 384px;
+  margin: 20px auto 80px;
+  border: 1px solid #a8a8a8;
+  box-shadow: 0 14px 50px 0px rgba(0, 0, 0, 0.3);
+}
+.box-2 .wrap .slide03 .rotate-0 {
   position: absolute;
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  /* Internet Explorer 9*/
-  -moz-transform: rotate(90deg);
-  /* Firefox */
-  -webkit-transform: rotate(90deg);
-  /* Safari 和 Chrome */
-  -o-transform: rotate(90deg);
-  /* Opera */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  color: #282828;
+  width: 224px;
+  height: 45px;
+  background: url(../images/images/spell4.png);
+  left: 380px;
+  top: -80px;
+  cursor: pointer;
+  opacity: .5;
 }
-.box-2 .wrap p.rotate span {
-  color: #7ee3e7;
-  margin-left: 5px;
+.box-2 .wrap .slide03 .rotate-1 {
+  width: 19px;
+  height: 336px;
+  position: absolute;
+  background: url(../images/images/spell-2.png) no-repeat center;
+  left: 205px;
+  top: 0px;
+  cursor: pointer;
+  opacity: .7;
 }
-.box-2 .wrap p.r-1 {
-  left: 76px;
-  top: 452px;
-}
-.box-2 .wrap p.r-2 {
-  right: 96px;
-  bottom: 120px;
+.box-2 .wrap .slide03 .rotate-2 {
+  width: 19px;
+  height: 268px;
+  position: absolute;
+  background: url(../images/images/spell-3.png) no-repeat center;
+  right: 205px;
+  bottom: 0px;
+  cursor: pointer;
+  opacity: .7;
 }
 .box-2 .wrap > img {
   position: absolute;
@@ -429,9 +534,13 @@
 /*footer end*/
 .num,
 .title,
-.explain {
+.explain,
+.slide03 {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+.vjs-remaining-time-display {
+  line-height: 3em;
 }

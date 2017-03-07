@@ -10,7 +10,15 @@
 		<script src="../js/jquery-1.11.3.min.js"></script>
 		<script src="../js/jquery.SuperSlide.2.1.1.js"></script>
 		<script src="../js/video.min.js"></script>
-		<script src='../js/index.js'></script>
+		<!-- If you'd like to support IE8 -->
+ 9     	<script src="js/videojs/videojs-ie8.min.js"></script>
+10     	<!--[if lt IE 9]> 
+11         <script  type="text/javascript" src="js/html5.js"></script>
+12     	<![endif]-->
+		<script src='../js/index.js'></script>		
+		<script>
+			videojs.options.flash.swf = "js/video-js.swf"
+		</script>
 	</head>
 	<body>
 		<div class="fix-bg">
@@ -36,7 +44,6 @@
 				<div class="wrap-con">
 					<p>整合营销传播（<span>IMC</span>）</p>
 					<div class="video-wrap">
-						<span class="parse"></span>
 						<div class="video-con">
 							<div class="hd">
 						        <ul></ul>
@@ -45,43 +52,31 @@
 						    </div>
 						    <div class="bd">
 						        <ul>
-						            <li>
-						            	<video 
-						            		id="video_1" 
-						            		class="video-js vjs-big-play-centered"
-						            		style="width: 100%;height:100%;" 
-						            		controls 
-						            		preload="auto" 
-						            		data-setup='{}'>
-						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-						            	</video>
+						            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background: pink;">
+						            	①
 						            </li>
-							        <li style="background:#abcdef;">
-							        	<video 
-						            		id="video_2" 
-						            		class="video-js vjs-big-play-centered"
-						            		style="width: 100%;height:100%;" 
-						            		controls 
-						            		preload="auto" 
-						            		data-setup='{}'>
-						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-						            	</video>
+							        <li data-src="../images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;">
+							        	②
 							        </li>
-						            <li style="background:greenyellow;">
-						            	<video 
-						            		id="video_3" 
-						            		class="video-js vjs-big-play-centered"
-						            		style="width: 100%;height:100%;" 
-						            		controls 
-						            		preload="auto" 
-						            		data-setup='{}'>
-						            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-						            	</video>
+						            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:greenyellow;">
+						            	③
 						            </li>
 					            
 						        </ul>
 						    </div>
-						    <div class="close">×</div>
+						    <div class="video">
+						    	<video 
+				            		id="video_1" 
+				            		class="video-js vjs-big-play-centered vjs-big-play-button"
+				            		style="width: 100%;height:100%;" 
+				            		controls 
+				            		preload="auto" 
+				            		data-setup='{}'>
+				            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+				            	</video>
+				            	<div class="close">×</div>
+						    </div>
+						    
 						</div>
 					</div>
 					
@@ -136,21 +131,35 @@
 					<div class="more">MORE <i></i> </div>
 				</div>
 				<img src="../images/images/pic.png" alt="" />
-				<div class="video-con1">
-					<div class="hd">
-				        <ul></ul>
-				        <span class='prev'></span>
-				        <span class='next'></span>
-				    </div>
-				    <div class="bd">
-				        <ul>
-				            <li style="background:hotpink;"></li>
-					        <li style="background:#abcdef;"></li>
-				            <li style="background:greenyellow;"></li>
-			            
-				        </ul>
-				    </div>
-				    <div class="close">×</div>
+				<div class="video2-wrap">
+					<div class="video-con1">
+						<div class="hd">
+					        <ul></ul>
+					        <span class='prev'></span>
+					        <span class='next'></span>
+					    </div>
+					    <div class="bd">
+					        <ul>
+					            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:hotpink;"></li>
+						        <li data-src="../images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;"></li>
+					            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:greenyellow;"></li>
+				            
+					        </ul>
+					    </div>
+					    <div class="video2">
+					    	<video 
+			            		id="video_2" 
+			            		class="video-js vjs-big-play-centered vjs-big-play-button"
+			            		style="width: 100%;height:100%;" 
+			            		controls 
+			            		preload="auto" 
+			            		data-setup='{}'>
+			            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+			            	</video>
+			            	<div class="close">×</div>
+					    </div>
+					    <div class="con-close">×</div>
+					</div>
 				</div>
 			</div>
 		</div>

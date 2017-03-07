@@ -117,7 +117,6 @@
                 margin-left: -32px;   
             }
             .video-con{
-                display: none;
                 position:relative; 
                 height: 637px;     
             }
@@ -142,7 +141,7 @@
         ul{
             position:absolute;
             z-index: 10;
-            bottom: -10px;
+            bottom: -20px;
             left: 0;
             right: 0;
             display: inline-block;
@@ -167,6 +166,11 @@
             margin-top: -17px;
             z-index: 10;
             cursor: pointer;
+            opacity: .5;
+            transition: all .5s ease;
+        }
+        span:hover{
+            opacity: 1;
         }
         .prev{
            background: url(../images/images/arrow-l.png) no-repeat;
@@ -188,21 +192,30 @@
         }
     }
 }
-.close{
-    font-size: 50px;
-    font-weight: lighter;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
+.video,.video2{
+    display: none;
     position: absolute;
-    top: 5px;
-    right: 10px;
-    z-index: 10;
-    opacity: .7;
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .close{
+        font-size: 50px;
+        font-weight: lighter;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index: 10;
+        opacity: .7;
+        cursor: pointer;
+    }
 }
+
 /*02,03盒子线条 start*/
 .line-bg{
     top: 0;
@@ -346,7 +359,7 @@
             bottom: 60px;
             z-index: 2;
         }
-        &>.video-con1{
+        .video2-wrap{
             display: none;
             height: 637px;
             width: 1134px;
@@ -354,15 +367,39 @@
             left: 0;
             right: 0;
             margin: 0 auto;
-            .prev{
-               background: url(../images/images/arrow-l1.png) no-repeat;
-               left: -30px;
+            &>.video-con1{
+                cursor: pointer;
+                position:relative;
+                .prev{
+                   background: url(../images/images/arrow-l1.png) no-repeat;
+                   left: -30px;
+                }
+                .next{
+                    background: url(../images/images/arrow-r1.png) no-repeat;
+                    right: -30px;
+                }
+                .hd ul li{
+                    background: #ddd;
+                }
+                .hd ul li.on{
+                    background: #999;
+                }
+                .con-close{
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 36px;
+                    text-align: center; 
+                    top: -30px;
+                    right: -30px;
+                    border-radius: 50%;
+                    font-size: 40px;
+                    background: #eee;
+                    color: #999;
+                    cursor: pointer;
+                }
             }
-            .next{
-                background: url(../images/images/arrow-r1.png) no-repeat;
-                right: -30px;
-            }
-        }
+        }    
     }
 }
 /*02 end*/

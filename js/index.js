@@ -29,8 +29,9 @@ $(document).ready(function(){
 	});
 	
 	//初始化slide
-	var video1 = videojs('video_1');
-	$(".video-con,.video-con1").slide({
+	var video_1= videojs("video_1");
+	var video_2= videojs("video_2");
+	$(".video-con").slide({
 		effect:"fold",
 		autoPage:"<li></li>",
 		titCell:".hd ul",
@@ -39,6 +40,28 @@ $(document).ready(function(){
 		trigger:"click",
 		interTime:3000,
 		delayTime:1000,
+		startFun:function(i,c){
+			video_1.pause();
+			$("#video_1").parent().hide();
+			var thisLi = $(".video-con").find(".bd li").eq(i);
+			video_1.src(thisLi.data("src"));
+		},
+	});
+	$(".video-con1").slide({
+		effect:"fold",
+		autoPage:"<li></li>",
+		titCell:".hd ul",
+		mainCell:".bd ul",
+		autoPlay:false,
+		trigger:"click",
+		interTime:3000,
+		delayTime:1000,
+		startFun:function(i,c){
+			video_2.pause();
+			$("#video_2").parent().hide();
+			var thisLi = $(".video-con1").find(".bd li").eq(i);
+			video_2.src(thisLi.data("src"));
+		},
 	});
 	$(".slide03").slide({
 		effect:"fold",
@@ -50,25 +73,37 @@ $(document).ready(function(){
 		delayTime:1000,
 		mouseOverStop:false,
 	});
-	$(".video-wrap").click(function(e){
-		$(this).find(".video-con").fadeIn();
+	$(".video-con").find(".bd li").click(function(){
+		$("#video_1").parent().show();
+		video_1.play();	
+	});
+	$(".video-con1").find(".bd li").click(function(){
+		$("#video_2").parent().show();
+		video_2.play();	
+	});
+	$(".video-con .close").click(function(e){
+		$(this).parent().hide();
+		video_1.pause();
+		video_1.currentTime(0);
+		e.stopPropagation()
+	});
+	$(".video-con1 .close").click(function(e){
+		$(this).parent().hide();
+		video_2.pause();
+		video_2.currentTime(0);
 		e.stopPropagation()
 	});
 	$(".more").click(function(e){
-		$(".video-con1").fadeIn();
+		$(".video2-wrap").fadeIn();
 		e.stopPropagation()
 	});
-	$(".close").click(function(e){
-		$(this).parent().fadeOut();
+	$(".con-close").click(function(e){
+		$(".video2-wrap").fadeOut();
 		e.stopPropagation()
 	});
 	
 });
-$(function(){
-    var myPlayer = videojs('video_1');
-    //myPlayer.play();
-	
-});
+
 
 
 function divAni(divArr,delay,boxH,top){

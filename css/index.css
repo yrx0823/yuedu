@@ -34,14 +34,18 @@
   background-color: #fff;
   opacity: 1;
 }
+.nav .wrap {
+  height: 90px;
+}
 .nav .wrap:after {
   display: block;
   width: 0px;
   height: 0px;
   line-height: 0;
-  content: ".";
+  content: "";
   clear: both;
   visibility: hidden;
+  display: none;
 }
 .nav .wrap .logo {
   line-height: 90px;
@@ -63,9 +67,10 @@
   width: 0px;
   height: 0px;
   line-height: 0;
-  content: ".";
+  content: "";
   clear: both;
   visibility: hidden;
+  display: none;
 }
 .nav .wrap .nav-con a {
   float: left;
@@ -271,9 +276,10 @@
   width: 0px;
   height: 0px;
   line-height: 0;
-  content: ".";
+  content: "";
   clear: both;
   visibility: hidden;
+  display: none;
 }
 .box-1 .wrap > div {
   z-index: 3;
@@ -307,9 +313,10 @@
   width: 0px;
   height: 0px;
   line-height: 0;
-  content: ".";
+  content: "";
   clear: both;
   visibility: hidden;
+  display: none;
 }
 .box-1 .wrap .explain ul li {
   float: left;
@@ -492,9 +499,10 @@
   width: 0px;
   height: 0px;
   line-height: 0;
-  content: ".";
+  content: "";
   clear: both;
   visibility: hidden;
+  display: none;
 }
 .footer .wrap .logo {
   float: left;

@@ -210,17 +210,18 @@
   height: 637px;
   width: 1134px;
 }
-.video,
-.video2 {
-  display: none;
+.v1Con {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
-.video .close,
-.video2 .close {
+.v1Con #video_1 {
+  width: 100%;
+  height: 100%;
+}
+.v1Con .close {
   font-size: 50px;
   font-weight: lighter;
   color: #fff;

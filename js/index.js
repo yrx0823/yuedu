@@ -28,9 +28,23 @@ $(document).ready(function(){
 		divAni($box2divs,0.2,box1H,top);
 	});
 	
+	//初始化视频
+	function loadedHandler(){
+        console.log(1);
+    }
+    var flashvars_1={
+        f:'http://vjs.zencdn.net/v/oceans.mp4',
+        c:0,
+        p:2,
+        loaded:'loadedHandler',
+        b:0
+    };
+    var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+    var video=['http://vjs.zencdn.net/v/oceans.mp4->video/mp4'];
+    CKobject.embed('../ckplayer/ckplayer.swf','video_1','ckplayer_video_1','100%','100%',true,flashvars_1,video,params);
 	//初始化slide
-	var video_1= videojs("video_1");
-	var video_2= videojs("video_2");
+	//var video_1= videojs("video_1");
+	//var video_2= videojs("video_2");
 	$(".video-con").slide({
 		effect:"fold",
 		autoPage:"<li></li>",
@@ -41,10 +55,12 @@ $(document).ready(function(){
 		interTime:3000,
 		delayTime:1000,
 		startFun:function(i,c){
-			video_1.pause();
+//			video_1.pause();
+			console.log(CKobject.getObjectById('ckplayer_video_1'));
 			$("#video_1").parent().hide();
-			var thisLi = $(".video-con").find(".bd li").eq(i);
-			video_1.src(thisLi.data("src"));
+			var thisSrc = $(".video-con").find(".bd li").eq(i).data("src");
+			console.log(thisSrc);
+//			video_1.src(thisLi.data("src"));
 		},
 	});
 	$(".video-con1").slide({
@@ -57,10 +73,10 @@ $(document).ready(function(){
 		interTime:3000,
 		delayTime:1000,
 		startFun:function(i,c){
-			video_2.pause();
-			$("#video_2").parent().hide();
-			var thisLi = $(".video-con1").find(".bd li").eq(i);
-			video_2.src(thisLi.data("src"));
+//			video_2.pause();
+//			$("#video_2").parent().hide();
+//			var thisLi = $(".video-con1").find(".bd li").eq(i);
+//			video_2.src(thisLi.data("src"));
 		},
 	});
 	$(".slide03").slide({
@@ -75,30 +91,30 @@ $(document).ready(function(){
 	});
 	$(".video-con").find(".bd li").click(function(){
 		$("#video_1").parent().show();
-		video_1.play();	
+//		video_1.play();	
 	});
 	$(".video-con1").find(".bd li").click(function(){
-		$("#video_2").parent().show();
-		video_2.play();	
+//		$("#video_2").parent().show();
+//		video_2.play();	
 	});
-	$(".video-con .close").click(function(e){
+	$(".v1Con .close").click(function(e){
 		$(this).parent().hide();
-		video_1.pause();
-		video_1.currentTime(0);
+//		video_1.pause();
+//		video_1.currentTime(0);
 		e.stopPropagation()
 	});
 	$(".video-con1 .close").click(function(e){
-		$(this).parent().hide();
-		video_2.pause();
-		video_2.currentTime(0);
+//		$(this).parent().hide();
+//		video_2.pause();
+//		video_2.currentTime(0);
 		e.stopPropagation()
 	});
 	$(".more").click(function(e){
-		$(".video2-wrap").fadeIn();
+//		$(".video2-wrap").fadeIn();
 		e.stopPropagation()
 	});
 	$(".con-close").click(function(e){
-		$(".video2-wrap").fadeOut();
+//		$(".video2-wrap").fadeOut();
 		e.stopPropagation()
 	});
 	

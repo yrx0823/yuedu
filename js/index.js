@@ -29,19 +29,17 @@ $(document).ready(function(){
 	});
 	
 	//初始化视频
-	function loadedHandler(){
-        console.log(1);
-    }
     var flashvars_1={
         f:'http://vjs.zencdn.net/v/oceans.mp4',
         c:0,
-        p:2,
-        loaded:'loadedHandler',
+        p:1,
         b:0
     };
+
     var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
     var video=['http://vjs.zencdn.net/v/oceans.mp4->video/mp4'];
-    CKobject.embed('../ckplayer/ckplayer.swf','video_1','ckplayer_video_1','100%','100%',true,flashvars_1,video,params);
+    CKobject.embed('../ckplayer/ckplayer/ckplayer.swf','video_1','ckplayer_video1','100%','100%',false,flashvars_1,video);
+	console.log(CKobject);
 	//初始化slide
 	//var video_1= videojs("video_1");
 	//var video_2= videojs("video_2");
@@ -56,7 +54,7 @@ $(document).ready(function(){
 		delayTime:1000,
 		startFun:function(i,c){
 //			video_1.pause();
-			console.log(CKobject.getObjectById('ckplayer_video_1'));
+			console.log(CKobject.getObjectById('ckplayer_video1'));
 			$("#video_1").parent().hide();
 			var thisSrc = $(".video-con").find(".bd li").eq(i).data("src");
 			console.log(thisSrc);

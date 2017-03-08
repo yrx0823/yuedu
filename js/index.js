@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
     var video=['http://vjs.zencdn.net/v/oceans.mp4->video/mp4'];
-    CKobject.embed('../ckplayer/ckplayer/ckplayer.swf','video_1','ckplayer_video1','100%','100%',false,flashvars_1,video);
+    CKobject.embed('../ckplayer/ckplayer.swf','video_1','ckplayer_video1','100%','100%',false,flashvars_1,video);
 	console.log(CKobject);
 	//初始化slide
 	//var video_1= videojs("video_1");

@@ -9,10 +9,12 @@
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 1;
     img{
         display: block;
         height: 100%;
         margin: 0 auto;
+        cursor: pointer;
     }
 }
 /*顶部背景 end*/
@@ -30,7 +32,7 @@
     top: 0;
     z-index: 100;
     box-shadow: 1px 1px 58px -16px rgba(0,0,0,.3);
-    transition: all .5s ease;
+    //transition: all .5s ease;
 }
 .nav{
     background-color: #fff;
@@ -260,15 +262,16 @@
 /*02 start*/
 .box-1{
     background:#fff;
+    padding-bottom: 80px;
     .wrap{
         height: 740px;
-        padding-bottom: 128px;
+        padding-bottom: 0px;
         &:after{
             .clear();
         }
         &>div{
             z-index: 3;
-            top: 140px; 
+            top: 120px; 
             position: absolute;
             height: 100%;
         }
@@ -359,7 +362,7 @@
             
             position: absolute;
             right: 116px;
-            bottom: 60px;
+            bottom: 0px;
             z-index: 2;
         }
         .video2-wrap{
@@ -425,12 +428,12 @@
             z-index: 2;
             h1{
                 color: #d23a34; 
-                padding-top: 54px;
+                padding-top: 120px;
             }
         }
         .title{
             position: relative;
-            padding-top: 54px;
+            padding-top: 120px;
             &>h2,&>span,p.p1,p.p2{
                 margin-left: 380px;
             };

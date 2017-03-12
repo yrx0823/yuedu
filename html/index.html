@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../css/video-js.min.css" />
 		<title>越度-首页</title>
 		<script src="../js/jquery-1.11.3.min.js"></script>
+		<script src="../js/anchorGoWhere.js"></script>
 		<script src="../js/jquery.SuperSlide.2.1.1.js"></script>
      	<script src="../js/videojs-ie8.min.js"></script>
 		<script src="../js/video.min.js"></script>
@@ -15,24 +16,24 @@
 	</head>
 	<body>
 		<div class="fix-bg">
-			<img src="../images/images/fix-bg.jpg" alt="" />
+			<img data-num="1" src="../images/images/light_1.gif" alt="" />
 		</div>
-		<div class="mask-bg"></div>
+		<!--<div class="mask-bg"></div>-->
 		<div class="nav" id="navId">
 			<div class="wrap">
 				<div class="logo">
 					<img src="../images/images/logo.png" alt="" />
 				</div>
 				<div class="nav-con">
-					<a class="cur" href=""><span>首页</span></a>
-					<a href=""><span>整合营销</span></a>
-					<a href=""><span>网红经济</span></a>
+					<a class="cur" href="#index"><span>首页</span></a>
+					<a href="#box1"><span>整合营销</span></a>
+					<a href="#box2"><span>网红经济</span></a>
 					<a href=""><span>CSR</span></a>
-					<a href=""><span>关于我们</span></a>
+					<a href="#footer"><span>关于我们</span></a>
 				</div>
 			</div>
 		</div>
-		<div class="carousel">
+		<div class="carousel" id="index">
 			<div class="wrap">
 				<div class="wrap-con">
 					<p>整合营销传播（<span>IMC</span>）</p>
@@ -74,8 +75,9 @@
 				</div>
 				
 			</div>
+			</div>
 		</div>
-		<div class="box-1">
+		<div id="box1" class="box-1">
 			<div class="wrap">
 				<ul class="line-bg">
 					<li></li>
@@ -154,7 +156,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="box-2">
+		<div id="box2" class="box-2">
 			<div class="wrap">
 				<ul class="line-bg">
 					<li></li>
@@ -189,7 +191,7 @@
 				<img src="../images/images/triangle.png" alt="" />
 			</div>
 		</div>
-		<div class="footer">
+		<div id="footer" class="footer">
 			<div class="wrap">
 				<div class="logo">
 					<img src="../images/images/logo.png" alt="" />
@@ -204,21 +206,5 @@
 				</div>
 			</div>
 		</div>
-		
-		<!--<script type="text/javascript">
-		    function loadedHandler(){
-		        console.log(1);
-		    }
-		    var flashvars={
-		        f:'http://vjs.zencdn.net/v/oceans.mp4',
-		        c:0,
-		        p:2,
-		        loaded:'loadedHandler',
-		        b:0
-		    };
-		    var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
-		    var video=['http://vjs.zencdn.net/v/oceans.mp4->video/mp4'];
-		    CKobject.embed('/ckplayer/ckplayer.swf','video_1','ckplayer_video_1','100%','100%',true,flashvars,video,params);
-		</script>-->
 	</body>
 </html>

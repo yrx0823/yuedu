@@ -5,23 +5,34 @@ $(document).ready(function(){
 	var box1H = $box1.height();
 	var $box1divs = $(".box-1>.wrap>div");
 	var $box2divs = $(".box-2>.wrap>div");
-//	var initTop = $(document).scrollTop();
-	var initH = $(window).height()-$nav.height()
-	$maskBg.height(initH);
-	$(".fix-bg").find("img").css("height",initH);
+	var $bgImg = $(".fix-bg").find("img");
+	var initH = $(window).height()-$nav.height();
+//	$maskBg.height(initH);
+	$nav.css("margin-top",initH);
+	$bgImg.css("height",initH);
+	$bgImg.click(function(){
+		var num = $bgImg.data("num");
+		if(num==3)num=0;
+		num++;
+		$bgImg.data("num",num);
+		this.src = "../images/images/light_"+num+".gif";
+	});
+	$(".nav-con a").anchorGoWhere({target:1});
 	$(window).on("scroll",function(){	
 		var top = $(document).scrollTop();
 		//导航动效
 		if(top > initH){
-			$nav.addClass("nav-fixed");
+			$nav.css("margin-top",0).addClass("nav-fixed");
 			if($(".baseF").length <= 0){
 				var _div = $("<div style='height:90px' class='baseF'></div>");
+				_div.css("margin-top",initH);
 				$("#navId").after(_div);
 			}	
 		}else{
-			$nav.removeClass("nav-fixed");
+			$nav.css("margin-top",initH).removeClass("nav-fixed");
 			$(".baseF").remove();
-			$maskBg.css({"opacity":top/1354});//蒙板
+//			$maskBg.css({"opacity":top/1354});
+			$(".fix-bg").css({"opacity":1-top/initH*0.5});
 		}
 		//0203板块动效
 		divAni($box1divs,0.2,box1H,top);
@@ -100,6 +111,8 @@ $(document).ready(function(){
 	});
 	$(".con-close").click(function(e){
 		$(".video2-wrap").fadeOut();
+		video_2.pause();
+		video_2.currentTime(0);
 		e.stopPropagation()
 	});
 	

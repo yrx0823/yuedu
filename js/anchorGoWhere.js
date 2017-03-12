@@ -15,7 +15,7 @@ jQuery.fn.anchorGoWhere = function(options){
                     jQuery("html,body").animate({scrollLeft:_targetLeft},o.timer);
                     break;
             }
-            return false;
+        
         });                  
     });
 }

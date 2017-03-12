@@ -18,6 +18,9 @@ $(document).ready(function(){
 		this.src = "../images/images/light_"+num+".gif";
 	});
 	$(".nav-con a").anchorGoWhere({target:1});
+	$(".nav-con a").click(function(){
+		$(this).addClass("cur").siblings().removeClass("cur");
+	});
 	$(window).on("scroll",function(){	
 		var top = $(document).scrollTop();
 		//导航动效

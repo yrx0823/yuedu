@@ -7,7 +7,8 @@ jQuery.fn.anchorGoWhere = function(options){
             var _rel = jQuery(this).attr("href").substr(1);
             switch(o.target){
                 case 1: 
-                    var _targetTop = jQuery("#"+_rel).offset().top-70;
+                    var _targetTop = _rel?jQuery("#"+_rel).offset().top-70:0;
+                    
                     jQuery("html,body").animate({scrollTop:_targetTop},o.timer,"linear");
                     break;
                 case 2:
@@ -15,7 +16,7 @@ jQuery.fn.anchorGoWhere = function(options){
                     jQuery("html,body").animate({scrollLeft:_targetLeft},o.timer);
                     break;
             }
-        
+        	return false;
         });                  
     });
 }

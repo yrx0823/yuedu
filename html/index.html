@@ -25,18 +25,39 @@
 					<img src="../images/images/logo.png" alt="" />
 				</div>
 				<div class="nav-con">
-					<a class="cur" href="#index"><span>首页</span></a>
-					<a href="#box1"><span>整合营销</span></a>
-					<a href="#box2"><span>网红经济</span></a>
-					<a href=""><span>CSR</span></a>
+					<a class="cur" href="#"><span>首页</span></a>
+					<a href="#market"><span>整合营销</span></a>
+					<a href="#csr"><span>CSR</span></a>
+					<a href="#online"><span>网红经济</span></a>
 					<a href="#footer"><span>关于我们</span></a>
 				</div>
 			</div>
 		</div>
-		<div class="carousel" id="index">
+		<script>
+			var $nav = $("#navId");
+			var $bgImg = $(".fix-bg").find("img");
+			var initH = $(window).height() - $nav.height();
+			_resize();
+			window.addEventListener("onorientationchange" in window? "onorientationchange":"resize", _resize, false);
+			function _resize() {
+				if($(window).width() < 1200) {
+					$bgImg.css({
+						"width": "100%"
+					});
+					init = $bgImg.height();
+				}else{
+					$bgImg.css({
+						"width": "auto"
+					});
+				}
+				$bgImg.css("height", initH);
+				$nav.css("margin-top", initH);
+			}
+		</script>
+		<div class="carousel" id="market">
 			<div class="wrap">
 				<div class="wrap-con">
-					<p>整合营销传播（<span>IMC</span>）</p>
+					<p class="">整合营销传播（<span>IMC</span>）</p>
 					<div class="video-wrap">
 						<div class="video-con">
 							<div class="hd">
@@ -69,17 +90,15 @@
 				            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
 				            	</video>
 					            <div class="close">×</div>
-						</div>
+							</div>
+						</div>			
 					</div>
-					
 				</div>
-				
-			</div>
 			</div>
 		</div>
-		<div id="box1" class="box-1">
+		<div id="csr" class="box-1">
 			<div class="wrap">
-				<div class="img"><img src="../images/images/pic.png" alt="" /></div>
+				<div class="img"><img class="wow fadeInUp" src="../images/images/pic.png" alt="" /></div>
 				<ul class="line-bg">
 					<li></li>
 					<li></li>
@@ -87,15 +106,15 @@
 					<li></li>
 					<li></li>
 				</ul>
-				<div class="num">
+				<div class="num wow fadeInUp">
 					<h1>02</h1>
 				</div>
-				<div class="title">
+				<div class="title wow fadeInUp">
 					<h2>企业CSR </h2>
 					<span></span>
-					<div class="spell-1"></div>
+					<div class="spell-1 wow fadeInUp"></div>
 				</div>
-				<div class="explain">
+				<div class="explain wow fadeInUp">
 					<ul>
 						<li>
 							<h4>战略定制</h4>
@@ -157,7 +176,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="box2" class="box-2">
+		<div id="online" class="box-2">
 			<div class="wrap">
 				<ul class="line-bg">
 					<li></li>
@@ -167,13 +186,13 @@
 					<li></li>
 				</ul>
 				<div class="num">
-					<h1>03</h1>
+					<h1 class="wow fadeInUp">03</h1>
 				</div>
-				<div class="title">
+				<div class="title wow fadeInUp">
 					<h2>网红经济 </h2>
 					<span></span>
 				</div>
-				<div class="slide03">
+				<div class="slide03 wow fadeInUp">
 					<div class="hd">
 						<ul>
 							<li class="rotate-0"></li>
@@ -199,13 +218,20 @@
 				</div>
 				<div class="copy">
 					<p>
-						<span>E-mail：<em>sy@yueduworld.com</em></span>
-						<span>联系电话：<em>010-57846627</em><em>010-1323322332</em></span>
+						<span>E-mail：<em><a href="mailto:yuedu@yueduworld.com">yuedu@yueduworld.com</a></em></span>
+						<span>联系电话：<em>010-65008632</em><em>010-64781366</em></span>
 						<span>公司地址：<em>北京市朝阳区三里屯街道美林大厦9层903</em></span>
 					</p>
 					<p class="small">Copyright © 2014-2015 by Tairan Corp. All Rights Reserved.浙ICP备12028500号-1</span>
 				</div>
 			</div>
 		</div>
+		<script src="../js/wow.js"></script>
+		<script>
+			if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+				new WOW().init();
+			};
+		</script>
 	</body>
+	
 </html>

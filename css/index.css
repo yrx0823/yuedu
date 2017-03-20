@@ -9,11 +9,25 @@
   opacity: 1;
   min-width: 1200px;
 }
-.fix-bg img {
-  display: block;
-  height: 100%;
+.fix-bg .img {
+  position: relative;
+  width: 1200px;
   margin: 0 auto;
+}
+.fix-bg .img img {
+  display: block;
+  width: 100%;
+}
+.fix-bg .img span {
+  position: absolute;
+  width: 215px;
+  height: 460px;
+  display: inline-block;
+  right: 60px;
+  top: 0;
+  z-index: 10;
   cursor: pointer;
+  border: 5px dashed #fff;
 }
 /*顶部背景 end*/
 .mask-bg {
@@ -108,14 +122,32 @@
 .carousel {
   background-color: #19929d;
 }
-.carousel .wrap-con {
-  padding: 62px 33px 46px;
-  background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
-}
 .carousel .wrap-con .video-wrap {
-  height: 637px;
   cursor: pointer;
   position: relative;
+}
+.carousel .wrap-con .video-wrap .img {
+  position: relative;
+  border: 20px solid #fff;
+  margin: 0 auto 46px;
+  width: 1098px;
+  height: 603px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.carousel .wrap-con .video-wrap .img .bg {
+  width: 100%;
+  height: 100%;
+  transform: scale(1, 1);
+  transition: transform 1s ease;
+}
+.carousel .wrap-con .video-wrap .img .bg:hover {
+  transform: scale(1.03, 1.03);
+}
+.carousel .wrap-con .video-wrap .drag {
+  position: absolute;
+  right: -10px;
+  top: 140px;
 }
 .carousel .wrap-con .video-wrap .parse {
   position: absolute;
@@ -128,14 +160,14 @@
   margin-left: -32px;
 }
 .carousel .wrap-con .video-wrap .video-con {
-  position: relative;
-  height: 637px;
+  position: absolute;
+  top: 0;
+  left: 30px;
 }
 .carousel .wrap-con p {
   color: #333;
   font-size: 32px;
-  padding-left: 46px;
-  padding-bottom: 20px;
+  padding: 60px 0 18px 80px;
 }
 .carousel .wrap-con p span {
   color: #ee1d3c;
@@ -143,6 +175,7 @@
 /*轮播图 end*/
 .video-con1,
 .video-con {
+  display: none;
   background: #fff;
 }
 .video-con1 .hd,
@@ -208,22 +241,11 @@
 }
 .video-con1 .bd ul li,
 .video-con .bd ul li {
-  height: 637px;
-  width: 1134px;
+  height: 643px;
+  width: 1140px;
 }
-.v1Con {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.v1Con #video_1 {
-  width: 100%;
-  height: 100%;
-}
-.v1Con .close {
+.video-con1 .close,
+.video-con .close {
   font-size: 50px;
   font-weight: lighter;
   color: #fff;
@@ -237,6 +259,18 @@
   z-index: 10;
   opacity: .7;
   cursor: pointer;
+}
+.v1Con {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.v1Con #video_1 {
+  width: 100%;
+  height: 100%;
 }
 /*02,03盒子线条 start*/
 .line-bg {
@@ -298,7 +332,6 @@
   z-index: 3;
   top: 120px;
   position: absolute;
-  height: 100%;
 }
 .box-1 .wrap .num h1 {
   color: #f59425;
@@ -393,48 +426,30 @@
 .box-1 .wrap > .img img {
   position: absolute;
   right: 0px;
-  bottom: 140px;
+  bottom: 0px;
 }
-.box-1 .wrap .video2-wrap {
-  display: none;
-  height: 637px;
-  width: 1134px;
+.box-1 .wrap .video-con1 {
+  cursor: pointer;
+  height: 643px;
+  width: 1140px;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
-.box-1 .wrap .video2-wrap > .video-con1 {
-  cursor: pointer;
-  position: relative;
-}
-.box-1 .wrap .video2-wrap > .video-con1 .prev {
+.box-1 .wrap .video-con1 .prev {
   background: url(../images/images/arrow-l1.png) no-repeat;
   left: -30px;
 }
-.box-1 .wrap .video2-wrap > .video-con1 .next {
+.box-1 .wrap .video-con1 .next {
   background: url(../images/images/arrow-r1.png) no-repeat;
   right: -30px;
 }
-.box-1 .wrap .video2-wrap > .video-con1 .hd ul li {
+.box-1 .wrap .video-con1 .hd ul li {
   background: #ddd;
 }
-.box-1 .wrap .video2-wrap > .video-con1 .hd ul li.on {
+.box-1 .wrap .video-con1 .hd ul li.on {
   background: #999;
-}
-.box-1 .wrap .video2-wrap > .video-con1 .con-close {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  line-height: 36px;
-  text-align: center;
-  top: -30px;
-  right: -30px;
-  border-radius: 50%;
-  font-size: 40px;
-  background: #eee;
-  color: #999;
-  cursor: pointer;
 }
 /*02 end*/
 /*03 start*/
@@ -584,3 +599,6 @@
   padding-top: 12px;
 }
 /*footer end*/
+.vjs-remaining-time-display {
+  line-height: 3em;
+}

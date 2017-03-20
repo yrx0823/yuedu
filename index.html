@@ -2,27 +2,30 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../css/reset.css" />
-		<link rel="stylesheet" href="../css/animate.css" />
-		<link rel="stylesheet" href="../css/index.css" />
-		<link rel="stylesheet" href="../css/video-js.min.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/video-js.min.css" />
 		<title>越度-首页</title>
-		<script src="../js/jquery-1.11.3.min.js"></script>
-		<script src="../js/anchorGoWhere.js"></script>
-		<script src="../js/jquery.SuperSlide.2.1.1.js"></script>
-     	<script src="../js/videojs-ie8.min.js"></script>
-		<script src="../js/video.min.js"></script>
-		<script src='../js/index.js'></script>	
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/anchorGoWhere.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+     	<script src="js/videojs-ie8.min.js"></script>
+		<script src="js/video.min.js"></script>
+		<script src='js/index.js'></script>	
 	</head>
 	<body>
 		<div class="fix-bg">
-			<img data-num="1" src="../images/images/light_1.gif" alt="" />
+			<div class="img">
+				<img data-num="1" src="images/images/light_1.gif" alt="" />
+				<span></span>
+			</div>
 		</div>
 		<!--<div class="mask-bg"></div>-->
 		<div class="nav" id="navId">
 			<div class="wrap">
 				<div class="logo">
-					<img src="../images/images/logo.png" alt="" />
+					<img src="images/images/logo.png" alt="" />
 				</div>
 				<div class="nav-con">
 					<a class="cur" href="#"><span>首页</span></a>
@@ -41,24 +44,23 @@
 			window.addEventListener("onorientationchange" in window? "onorientationchange":"resize", _resize, false);
 			function _resize() {
 				if($(window).width() < 1200) {
-					$bgImg.css({
-						"width": "100%"
-					});
-					init = $bgImg.height();
+					initH = $bgImg.height();
 				}else{
-					$bgImg.css({
-						"width": "auto"
-					});
+					initH = $(window).height() - $nav.height();
 				}
-				$bgImg.css("height", initH);
+				$(".fix-bg").height(initH);
 				$nav.css("margin-top", initH);
 			}
 		</script>
 		<div class="carousel" id="market">
 			<div class="wrap">
 				<div class="wrap-con">
-					<p class="">整合营销传播（<span>IMC</span>）</p>
+					<p class="p1">整合营销传播（<span>IMC</span>）</p>
 					<div class="video-wrap">
+						<div class="img">
+							<img class="bg" src="images/images/bannerimg_03.jpg" alt="" />
+						</div>
+						<img class="drag" src="images/images/drag.png" alt="" />
 						<div class="video-con">
 							<div class="hd">
 						        <ul></ul>
@@ -70,7 +72,7 @@
 						            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background: pink;">
 						            	①
 						            </li>
-							        <li data-src="../images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;">
+							        <li data-src="images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;">
 							        	②
 							        </li>
 						            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:greenyellow;">
@@ -89,8 +91,8 @@
 				            		data-setup='{}'>
 				            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
 				            	</video>
-					            <div class="close">×</div>
 							</div>
+					        <div class="close">×</div>
 						</div>			
 					</div>
 				</div>
@@ -98,7 +100,7 @@
 		</div>
 		<div id="csr" class="box-1">
 			<div class="wrap">
-				<div class="img"><img class="wow fadeInUp" src="../images/images/pic.png" alt="" /></div>
+				<div class="img"><img class="wow fadeInUp" src="images/images/pic.png" alt="" /></div>
 				<ul class="line-bg">
 					<li></li>
 					<li></li>
@@ -144,35 +146,34 @@
 					<div class="more">MORE <i></i> </div>
 				</div>
 				
-				<div class="video2-wrap">
-					<div class="video-con1">
-						<div class="hd">
-					        <ul></ul>
-					        <span class='prev'></span>
-					        <span class='next'></span>
-					    </div>
-					    <div class="bd">
-					        <ul>
-					            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:hotpink;"></li>
-						        <li data-src="../images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;"></li>
-					            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:greenyellow;"></li>
-				            
-					        </ul>
-					    </div>
-					    <div class="v1Con">
-					    	<video 
-			            		id="video_2" 
-			            		class="video-js vjs-big-play-centered vjs-big-play-button"
-			            		style="width: 100%;height:100%;" 
-			            		controls 
-			            		preload="auto" 
-			            		data-setup='{}'>
-			            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-			            	</video>
-			            	<div class="close">×</div>
-					    </div>
-					    <div class="con-close">×</div>
-					</div>
+				<div class="video-con1">
+					<div class="hd">
+				        <ul></ul>
+				        <span class='prev'></span>
+				        <span class='next'></span>
+				    </div>
+				    <div class="bd">
+				        <ul>
+				            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:hotpink;"></li>
+					        <li data-src="images/mp4/Taylor.Swift Shake.It.Off_hd.mp4" style="background:#abcdef;"></li>
+				            <li data-src="http://vjs.zencdn.net/v/oceans.mp4" style="background:greenyellow;"></li>
+			            
+				        </ul>
+				    </div>
+				    <div class="v1Con">
+				    	<video 
+		            		id="video_2" 
+		            		class="video-js vjs-big-play-centered vjs-big-play-button"
+		            		style="width: 100%;height:100%;" 
+		            		controls 
+		            		preload="auto" 
+		            		data-setup='{}'>
+		            		<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+		            	</video>
+		            	
+				    </div>
+				    <div class="close">×</div>
+				    <!--<div class="con-close">×</div>-->
 				</div>
 			</div>
 		</div>
@@ -202,19 +203,19 @@
 					</div>
 					<div class="bd">
 						<ul>
-							<li><img src="../images/images/pic-2.jpg" alt="" /></li>
-							<li><img src="../images/images/pic-3.jpg" alt="" /></li>
-							<li><img src="../images/images/pic-4.jpg" alt="" /></li>
+							<li><img src="images/images/pic-2.jpg" alt="" /></li>
+							<li><img src="images/images/pic-3.jpg" alt="" /></li>
+							<li><img src="images/images/pic-4.jpg" alt="" /></li>
 						</ul>
 					</div>
 				</div>
-				<img src="../images/images/triangle.png" alt="" />
+				<img src="images/images/triangle.png" alt="" />
 			</div>
 		</div>
 		<div id="footer" class="footer">
 			<div class="wrap">
 				<div class="logo">
-					<img src="../images/images/logo.png" alt="" />
+					<img src="images/images/logo.png" alt="" />
 				</div>
 				<div class="copy">
 					<p>
@@ -226,7 +227,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/wow.js"></script>
+		<script src="js/wow.js"></script>
 		<script>
 			if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
 				new WOW().init();

@@ -10,11 +10,25 @@
     right: 0;
     opacity: 1;
     min-width: 1200px;
-    img{
-        display: block;
-        height: 100%;
+    .img{
+        position: relative;
+        width: 1200px;
         margin: 0 auto;
-        cursor: pointer;
+        img{
+            display: block;
+            width: 100%;
+        }
+        span{
+            position:absolute;
+            width: 215px;
+            height: 460px;
+            display: inline-block;
+            right: 60px;
+            top: 0;
+            z-index: 10;
+            cursor: pointer;
+            border:5px dashed #fff;
+        }
     }
 }
 /*顶部背景 end*/
@@ -102,12 +116,34 @@
 .carousel{
     background-color:#19929d;
     .wrap-con{
-        padding:62px 33px 46px;
-        background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
+        //padding:62px 33px 46px;
+        //background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
         .video-wrap{
-            height: 637px;
             cursor: pointer;
             position: relative;
+            .img{
+                position: relative;
+                border:20px solid #fff;
+                margin: 0 auto 46px;
+                width: 1098px;
+                height: 603px;
+                overflow: hidden;
+                cursor: pointer;
+                .bg{
+                   width: 100%;
+                   height: 100%;
+                   transform: scale(1,1);
+                   transition: transform 1s ease;
+                }
+                .bg:hover{
+                    transform: scale(1.03,1.03); 
+                }
+            }
+            .drag{
+                    position: absolute;
+                    right: -10px;
+                    top: 140px;
+                }
             .parse{
                 position: absolute;
                 width: 65px;
@@ -119,15 +155,15 @@
                 margin-left: -32px;   
             }
             .video-con{
-                position:relative; 
-                height: 637px;     
+                position:absolute;  
+                top: 0;
+                left: 30px;    
             }
         }
         p{
             color: #333;
             font-size: 32px;
-            padding-left: 46px;
-            padding-bottom: 20px;
+            padding: 60px 0 18px 80px;
             span{
                 color: #ee1d3c;
             }
@@ -137,6 +173,7 @@
 }
 /*轮播图 end*/
 .video-con1,.video-con{
+    display: none;
     background: #fff;
     .hd{
         text-align: center;
@@ -188,22 +225,10 @@
         ul{
             height: 100%;
             li{
-                height:637px;
-                width: 1134px;
+                height:643px;
+                width: 1140px;
             }
         }
-    }
-}
-.v1Con{
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    #video_1{ 
-        width: 100%;
-        height: 100%;
     }
     .close{
         font-size: 50px;
@@ -219,6 +244,18 @@
         z-index: 10;
         opacity: .7;
         cursor: pointer;
+    }
+}
+.v1Con{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    #video_1{ 
+        width: 100%;
+        height: 100%;
     }
 }
 /*02,03盒子线条 start*/
@@ -273,7 +310,7 @@
             z-index: 3;
             top: 120px; 
             position: absolute;
-            height: 100%;
+//          height: 100%;
         }
         .num{
             h1{
@@ -367,48 +404,31 @@
             img{
                 position: absolute;
                 right: 0px;
-                bottom: 140px;
+                bottom: 0px;
             }
         }
-        .video2-wrap{
-            display: none;
-            height: 637px;
-            width: 1134px;
+
+        .video-con1{
+            cursor: pointer;
+            height: 643px;
+            width: 1140px;
             position: absolute;
             left: 0;
             right: 0;
             margin: 0 auto;
-            &>.video-con1{
-                cursor: pointer;
-                position:relative;
-                .prev{
-                   background: url(../images/images/arrow-l1.png) no-repeat;
-                   left: -30px;
-                }
-                .next{
-                    background: url(../images/images/arrow-r1.png) no-repeat;
-                    right: -30px;
-                }
-                .hd ul li{
-                    background: #ddd;
-                }
-                .hd ul li.on{
-                    background: #999;
-                }
-                .con-close{
-                    position: absolute;
-                    width: 40px;
-                    height: 40px;
-                    line-height: 36px;
-                    text-align: center; 
-                    top: -30px;
-                    right: -30px;
-                    border-radius: 50%;
-                    font-size: 40px;
-                    background: #eee;
-                    color: #999;
-                    cursor: pointer;
-                }
+            .prev{
+               background: url(../images/images/arrow-l1.png) no-repeat;
+               left: -30px;
+            }
+            .next{
+                background: url(../images/images/arrow-r1.png) no-repeat;
+                right: -30px;
+            }
+            .hd ul li{
+                background: #ddd;
+            }
+            .hd ul li.on{
+                background: #999;
             }
         }    
     }
@@ -564,3 +584,6 @@
 //  -webkit-animation-fill-mode: both;
 //  animation-fill-mode: both;
 //}
+.vjs-remaining-time-display{
+    line-height: 3em;
+}

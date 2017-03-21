@@ -4,31 +4,16 @@
 .fix-bg{
     background-color: #ee1d3c;
     position: fixed;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 0;
     right: 0;
     opacity: 1;
     min-width: 1200px;
-    .img{
-        position: relative;
-        width: 1200px;
+    img{
+        display: none;
         margin: 0 auto;
-        img{
-            display: block;
-            width: 100%;
-        }
-        span{
-            position:absolute;
-            width: 215px;
-            height: 460px;
-            display: inline-block;
-            right: 60px;
-            top: 0;
-            z-index: 10;
-            cursor: pointer;
-            border:5px dashed #fff;
-        }
+        cursor: pointer;
     }
 }
 /*顶部背景 end*/
@@ -39,24 +24,18 @@
     filter:alpha(opacity=0);
 }
 /*导航 start*/
-.nav-fixed{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 100;
-    box-shadow: 1px 1px 58px -16px rgba(0,0,0,.3);
-    //transition: all .5s ease;
-}
+
 .nav{
     background-color: #fff;
     opacity: 1;
+    position: relative;
+    z-index: 1;
     .wrap{
         &:after{
             .clear();
         }
         .logo{
-            line-height: 90px;
+            line-height: 80px;
             float: left;
             img{
                 width: 127px;
@@ -70,7 +49,7 @@
             &:after{
                 .clear();
             }
-            line-height: 90px;
+            line-height: 80px;
             float: right;
             a{
                 float: left;
@@ -111,10 +90,21 @@
         }
     }
 }
+.nav-fixed{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: 1px 1px 58px -16px rgba(0,0,0,.3);
+    //transition: all .5s ease;
+}
 /*导航 end*/
 /*轮播图 start*/
 .carousel{
     background-color:#19929d;
+    position: relative;
+    z-index: 1;
     .wrap-con{
         //padding:62px 33px 46px;
         //background: url(../images/images/banner-bg.jpg) no-repeat 33px 114px;
@@ -298,6 +288,8 @@
 /*02,03盒子线条 end*/
 /*02 start*/
 .box-1{
+    position: relative;
+    z-index: 1;
     background:#fff;
     padding-bottom: 80px;
     .wrap{
@@ -436,6 +428,8 @@
 /*02 end*/
 /*03 start*/
 .box-2{
+    position: relative;
+    z-index: 1;
     background:#fff;
     .wrap{
         padding-top: 120px;
@@ -536,6 +530,8 @@
 /*03 end*/
 /*footer start*/
 .footer{
+    position: relative;
+    z-index: 1;
     background:#eeeeee;
     padding: 66px 0 38px 0;
     .wrap{

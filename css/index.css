@@ -2,32 +2,17 @@
 .fix-bg {
   background-color: #ee1d3c;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   top: 0;
   left: 0;
   right: 0;
   opacity: 1;
   min-width: 1200px;
 }
-.fix-bg .img {
-  position: relative;
-  width: 1200px;
+.fix-bg img {
+  display: none;
   margin: 0 auto;
-}
-.fix-bg .img img {
-  display: block;
-  width: 100%;
-}
-.fix-bg .img span {
-  position: absolute;
-  width: 215px;
-  height: 460px;
-  display: inline-block;
-  right: 60px;
-  top: 0;
-  z-index: 10;
   cursor: pointer;
-  border: 5px dashed #fff;
 }
 /*顶部背景 end*/
 .mask-bg {
@@ -37,17 +22,11 @@
   filter: alpha(opacity=0);
 }
 /*导航 start*/
-.nav-fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 100;
-  box-shadow: 1px 1px 58px -16px rgba(0, 0, 0, 0.3);
-}
 .nav {
   background-color: #fff;
   opacity: 1;
+  position: relative;
+  z-index: 1;
 }
 .nav .wrap:after {
   display: block;
@@ -59,7 +38,7 @@
   visibility: hidden;
 }
 .nav .wrap .logo {
-  line-height: 90px;
+  line-height: 80px;
   float: left;
   margin-left: 74px;
 }
@@ -70,7 +49,7 @@
 }
 .nav .wrap .nav-con {
   margin-right: 74px;
-  line-height: 90px;
+  line-height: 80px;
   float: right;
 }
 .nav .wrap .nav-con:after {
@@ -117,10 +96,20 @@
   transform: scale(1, 1);
   border-bottom: 2px solid #ee1d3c\9;
 }
+.nav-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  box-shadow: 1px 1px 58px -16px rgba(0, 0, 0, 0.3);
+}
 /*导航 end*/
 /*轮播图 start*/
 .carousel {
   background-color: #19929d;
+  position: relative;
+  z-index: 1;
 }
 .carousel .wrap-con .video-wrap {
   cursor: pointer;
@@ -312,6 +301,8 @@
 /*02,03盒子线条 end*/
 /*02 start*/
 .box-1 {
+  position: relative;
+  z-index: 1;
   background: #fff;
   padding-bottom: 80px;
 }
@@ -454,6 +445,8 @@
 /*02 end*/
 /*03 start*/
 .box-2 {
+  position: relative;
+  z-index: 1;
   background: #fff;
 }
 .box-2 .wrap {
@@ -555,6 +548,8 @@
 /*03 end*/
 /*footer start*/
 .footer {
+  position: relative;
+  z-index: 1;
   background: #eeeeee;
   padding: 66px 0 38px 0;
 }

@@ -16,10 +16,11 @@
 	</head>
 	<body>
 		<div class="fix-bg">
-			<div class="img">
-				<img data-num="1" src="images/images/light_1.gif" alt="" />
-				<span></span>
-			</div>
+				<img style="display:block" data-num="1" src="images/images/light_1.gif" alt="" />
+				<img data-num="2" src="images/images/light_2.gif" alt="" />
+				<img data-num="3" src="images/images/light_3.gif" alt="" />
+				<img data-num="4" src="images/images/light_4.gif" alt="" />
+				<img data-num="5" src="images/images/light_5.gif" alt="" />
 		</div>
 		<!--<div class="mask-bg"></div>-->
 		<div class="nav" id="navId">
@@ -44,9 +45,11 @@
 			window.addEventListener("onorientationchange" in window? "onorientationchange":"resize", _resize, false);
 			function _resize() {
 				if($(window).width() < 1200) {
+					$bgImg.width($(window).width());
 					initH = $bgImg.height();
 				}else{
 					initH = $(window).height() - $nav.height();
+					$bgImg.width("auto").height(initH);
 				}
 				$(".fix-bg").height(initH);
 				$nav.css("margin-top", initH);

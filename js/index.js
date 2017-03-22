@@ -110,6 +110,7 @@ $(document).ready(function(){
 
 function video(conClass,videoId,close){
 	var video= videojs(videoId);
+	var ended = 1;
 	$(conClass).slide({
 		effect:"fold",
 		autoPage:"<li></li>",
@@ -118,25 +119,35 @@ function video(conClass,videoId,close){
 		autoPlay:false,
 		trigger:"click",
 		interTime:3000,
-		delayTime:1000,
+		delayTime:500,
 		startFun:function(i,c){
-			video.pause();
 			$("#"+videoId).parent().hide();
-			var thisSrc = $(conClass).find(".bd li").eq(i).data("src");
+			var thisSrc = $(conClass).find(".bd li").eq(i).attr("data-src");
 			if(thisSrc){
+				//console.log("you:"+thisSrc);
 				video.src(thisSrc);
-			}
+			}else{
+				//console.log("mei:"+thisSrc);				
+			}	
+			ended = 0;
+		},
+		endFun:function(i,c){
+			ended = 1;
 		},
 	});
 	$(conClass).find(".bd li").click(function(){
-		var src = $(this).data("src");console.log(src);
-		if(src){
-			$("#"+videoId).parent().show();
-			video.play();
-		}else{
-			return false;
+		if(ended == 1)
+		{
+			var src = $(this).attr("data-src");
+			//console.log(src);
+			if(src){
+				$("#"+videoId).parent().show();
+				video.play();
+			}else{
+				$("#"+videoId).parent().hide();
+				return false;
+			}					
 		}
-			
 	});
 	$(close).click(function(e){
 		$(this).parent().hide();

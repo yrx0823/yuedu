@@ -25,8 +25,6 @@
 .nav {
   background-color: #fff;
   opacity: 1;
-  position: relative;
-  z-index: 1;
 }
 .nav .wrap:after {
   display: block;
@@ -108,8 +106,6 @@
 /*轮播图 start*/
 .carousel {
   background-color: #19929d;
-  position: relative;
-  z-index: 1;
 }
 .carousel .wrap-con .video-wrap {
   cursor: pointer;
@@ -235,11 +231,11 @@
 }
 .video-con1 .close,
 .video-con .close {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: lighter;
   color: #fff;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   text-align: center;
   line-height: 30px;
   position: absolute;
@@ -301,8 +297,6 @@
 /*02,03盒子线条 end*/
 /*02 start*/
 .box-1 {
-  position: relative;
-  z-index: 1;
   background: #fff;
   padding-bottom: 80px;
 }
@@ -445,8 +439,6 @@
 /*02 end*/
 /*03 start*/
 .box-2 {
-  position: relative;
-  z-index: 1;
   background: #fff;
 }
 .box-2 .wrap {
@@ -548,8 +540,6 @@
 /*03 end*/
 /*footer start*/
 .footer {
-  position: relative;
-  z-index: 1;
   background: #eeeeee;
   padding: 66px 0 38px 0;
 }
@@ -569,6 +559,9 @@
 }
 .footer .wrap .logo img {
   width: 140px;
+}
+.footer .wrap .copy {
+  float: left;
 }
 .footer .wrap .copy p {
   color: #7d7d7d;

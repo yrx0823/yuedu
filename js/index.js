@@ -123,12 +123,20 @@ function video(conClass,videoId,close){
 			video.pause();
 			$("#"+videoId).parent().hide();
 			var thisSrc = $(conClass).find(".bd li").eq(i).data("src");
-			video.src(thisSrc);
+			if(thisSrc){
+				video.src(thisSrc);
+			}
 		},
 	});
 	$(conClass).find(".bd li").click(function(){
-		$("#"+videoId).parent().show();
-		video.play();	
+		var src = $(this).data("src");console.log(src);
+		if(src){
+			$("#"+videoId).parent().show();
+			video.play();
+		}else{
+			return false;
+		}
+			
 	});
 	$(close).click(function(e){
 		$(this).parent().hide();

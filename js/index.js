@@ -54,8 +54,7 @@ $(document).ready(function(){
 			$(this).addClass("cur").siblings().removeClass("cur");
 		});
 	}
-	
-	$(window).on("scroll",function(){	
+	function scorllNav(){
 		var top = $(document).scrollTop();
 		//导航动效
 		if(top > initH){
@@ -77,12 +76,16 @@ $(document).ready(function(){
 			document.getElementById('navId').style.left = '0px';
 		}
         $(".fix-bg").css({"left":sl});
+	}
+	scorllNav();
+	$(window).on("scroll",function(){	
+		scorllNav();
 	});
 	$(".slide03").slide({
 		effect:"fold",
 		titCell:".hd li",
 		mainCell:".bd ul",
-		autoPlay:true,
+		autoPlay:false,
 		trigger:"mouseover",
 		interTime:3000,
 		delayTime:1000,
@@ -91,21 +94,16 @@ $(document).ready(function(){
 	
 	video(".video-con","video_1",".video-con .close");
 	video(".video-con1","video_2",".video-con1 .close");
-	//csr视频显示隐藏
-	$(".video-wrap .bg").click(function(e){
-		$(".video-con").fadeIn();
-		e.stopPropagation()
-	});
-	$(".more").click(function(e){
-		$(".video-con1").fadeIn();
-		e.stopPropagation();
-	});
-//	$(".con-close").click(function(e){
-//		$(".video-con1").fadeOut();
-//		video_2.pause();
-//		video_2.currentTime(0);
+	//视频显示隐藏
+//	$(".video-wrap .bg").click(function(e){
+//		$(".video-con").fadeIn();
+//		e.stopPropagation()
+//	});
+//	$(".more").click(function(e){
+//		$(".video-con1").fadeIn();
 //		e.stopPropagation();
 //	});
+
 });
 
 function video(conClass,videoId,close){
